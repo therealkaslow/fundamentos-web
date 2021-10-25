@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -23,26 +24,30 @@
     </ul>
     <h1 class="center">Entre em contato comigo</h1>
 
-    <div class="container">
+    <div class="container mb-50">
         <form>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome">
+            <label for="nome">Nome:</label> <br>
+            <input type="text" id="nome" onkeyup='validaNome()'>
+            <div id="txtNome"></div>
+            <br>
+            <label for="email">E-mail:</label> <br>
+            <input type="email" id="email" onkeyup='validaEmail()'>
+            <div id="txtEmail"></div>
             <br>
             <br>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email">
+            <label for="assunto">Assunto:</label> <br>
+            <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup= 'validaAssunto()'></textarea>
+            <div id="txtAssunto"></div>
             <br>
             <br>
-            <label for="Assunto">Assunto:</label> <br>
-            <textarea name="Assunto" id="Assunto" cols="30" rows="5"></textarea>
-            <br>
-            <br>
-            <button>Enviar</button>
+            <button onclick="enviar()">Enviar</button>
         </form>
         <div class="ml-50 mb-50">
             <p class="center">Francisco Morato, SP</p>
             <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!4v1634861713490!6m8!1m7!1seSGFIyRsILdsKs8Dea4XtA!2m2!1d-23.27302064973314!2d-46.7409705769852!3f265.0168066447898!4f-15.080518913931556!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1634861713490!6m8!1m7!1seSGFIyRsILdsKs8Dea4XtA!2m2!1d-23.27302064973314!2d-46.7409705769852!3f265.0168066447898!4f-15.080518913931556!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" onmousemove="mapaZoom()" onmouseout="mapaNormal()" id="mapa"></iframe>
+            </div>
+            </div>
             </div>
             <footer>
                 <div class="container center">
@@ -58,6 +63,8 @@
                     Todos os Direitos Reseverdos: Lucas Reis &copy
                 </p>
             </footer>
+
+            <script src="assets/js/script.js"></script>
 </body>
 
 </html>
